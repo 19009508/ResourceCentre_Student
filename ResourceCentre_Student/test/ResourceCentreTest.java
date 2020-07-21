@@ -121,7 +121,7 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		
 		// write your code here
-		// Test if Item list is not null but empty, so that can loan a new item
+		// Test if the list is populated so that an item can be loan
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
 		//test if the list of camcorders retrieved from the SourceCentre is empty
@@ -129,44 +129,83 @@ public class ResourceCentreTest {
 		String testOutput = "";
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
-		//Test if the asset tag are to be check for absence
+		//Test if an item in the list can be loan
+		camcorderList.add(cc2);
+        assertEquals("Test if the first item is available", true, camcorderList.get(0).getIsAvailable());
+        camcorderList.get(0).setIsAvailable(false);
+       
+        //Test if the ArrayList is updated to reflect the loan
+        assertEquals("Test if in the ArrayList the first item has been loaned", false, camcorderList.get(0).getIsAvailable());
 		
-		camcorderList.add(cc1);
-		String tag = cc1.getAssetTag();
-		String dueDate = "01012010";
-		assertTrue(ResourceCentre.doLoanCamcorder(camcorderList, tag, dueDate));
-		
+      //Test if the asset tag are to be check for absence
+      	camcorderList.add(cc1);
+      	String tag = cc1.getAssetTag();
+      	String dueDate = "01012010";
+      	assertTrue(ResourceCentre.doLoanCamcorder(camcorderList, tag, dueDate));
+        
 	}
 	
 	@Test
 	public void doLoanChromebookTest() {
 		
 		// write your code here
-		// Test if Item list is not null but empty, so that can loan a new item
+		// Test if the list is populated so that an item can be loan
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 				
 		//test if the list of chromebooks retrieved from the SourceCentre is empty
 		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 		String testOutput = "";
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
-				
-		//Test if the asset tag are to be check for absence	
-		chromebookList.add(cb1);
-		String tag = cb1.getAssetTag();
-		String dueDate = "01012010";
-		assertTrue(ResourceCentre.doLoanChromebook(chromebookList, tag, dueDate));
+		
+		//Test if an item in the list can be loan
+		chromebookList.add(cb2);
+        assertEquals("Test if the first item is available", true, chromebookList.get(0).getIsAvailable());
+        chromebookList.get(0).setIsAvailable(false);
+       
+        //Test if the ArrayList is updated to reflect the loan
+        assertEquals("Test if in the ArrayList the first item has been loaned", false, chromebookList.get(0).getIsAvailable());
+		
+      //Test if the asset tag are to be check for absence	
+      	chromebookList.add(cb1);
+      	String tag = cb1.getAssetTag();
+      	String dueDate = "01012010";
+      	assertTrue(ResourceCentre.doLoanChromebook(chromebookList, tag, dueDate));
+        
 	}
 	
 	@Test
 	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
+		
 		// write your code here
+		//Test if the list is populated so that an item can be return
+        assertNotNull("Test if list is available", camcorderList);
+       
+        //Test if an item in the list can be return
+        camcorderList.add(cc1);
+        ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), "2020-05-29");
+        assertEquals("Test if the first item isn't available", false, camcorderList.get(0).getIsAvailable());
+        camcorderList.get(0).setIsAvailable(true);
+       
+        //Test if the ArrayList is updated to reflect the return
+        assertEquals("Test if in the ArrayList the first item has been returned", true, camcorderList.get(0).getIsAvailable());
 		
 	}
 	@Test
 	public void doReturnChromebookTest() {
-		//fail("Not yet implemented");
+		
 		// write your code here
+		//Test if the list is populated so that an item can be return
+        assertNotNull("Test if list is available", chromebookList);
+       
+        //Test if an item in the list can be return
+        chromebookList.add(cb1);
+        ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), "2020-05-29");
+        assertEquals("Test if the first item isn't available", false, chromebookList.get(0).getIsAvailable());
+        chromebookList.get(0).setIsAvailable(true);
+       
+        //Test if the ArrayList is updated to reflect the return
+        assertEquals("Test if in the ArrayList the first item has been returned", true, chromebookList.get(0).getIsAvailable());
+               
 	}
 	
 	@After
