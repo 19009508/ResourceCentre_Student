@@ -33,7 +33,7 @@ public class ResourceCentreTest {
 
 	
 	@Test
-	public void addCamcorderTest() {
+	public void addCamcorderTest() {//anson
 		// Item list is not null, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
@@ -49,7 +49,7 @@ public class ResourceCentreTest {
 		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	}
 	@Test
-	public void addChromebookTest() {
+	public void addChromebookTest() {//anson
 		
 		// write your code here
 		// Item list is not null, so that can add a new item
@@ -68,7 +68,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void retrieveAllCamcorderTest() {
+	public void retrieveAllCamcorderTest() {//ISHWARYA
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 		
@@ -92,7 +92,7 @@ public class ResourceCentreTest {
 		
 	}
 	@Test
-	public void retrieveAllChromebookTest() {
+	public void retrieveAllChromebookTest() {//ISHWARYA
 		
 		// write your code here
 		// Test if Item list is not null but empty, so that can add a new item
@@ -118,7 +118,7 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void doLoanCamcorderTest() {
+	public void doLoanCamcorderTest() {//WQ
 		
 		// write your code here
 		// Test if the list is populated so that an item can be loan
@@ -146,7 +146,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void doLoanChromebookTest() {
+	public void doLoanChromebookTest() {//WQ
 		
 		// write your code here
 		// Test if the list is populated so that an item can be loan
@@ -174,7 +174,7 @@ public class ResourceCentreTest {
 	}
 	
 	@Test
-	public void doReturnCamcorderTest() {
+	public void doReturnCamcorderTest() {//WQ
 		
 		// write your code here
 		//Test if the list is populated so that an item can be return
@@ -191,7 +191,7 @@ public class ResourceCentreTest {
 		
 	}
 	@Test
-	public void doReturnChromebookTest() {
+	public void doReturnChromebookTest() {//WQ
 		
 		// write your code here
 		//Test if the list is populated so that an item can be return

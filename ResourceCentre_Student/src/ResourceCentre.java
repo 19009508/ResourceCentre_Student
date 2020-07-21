@@ -121,7 +121,7 @@ public class ResourceCentre {
 		}
 		return avail;
 	}
-
+                                          //Anson
 	//================================= Option 1 View =================================
 	public static String retrieveAllCamcorder(ArrayList<Camcorder> camcorderList) {
 		String output = "";
@@ -163,7 +163,7 @@ public class ResourceCentre {
 		output += retrieveAllChromebook(chromebookList);
 		System.out.println(output);
 	}
-
+										//ISHWARYA
 	//================================= Option 2 Add =================================
 	public static Camcorder inputCamcorder() {
 		String tag = Helper.readString("Enter asset tag > ");
@@ -196,7 +196,7 @@ public class ResourceCentre {
 		chromebookList.add(cb);
 		System.out.println("Chromebook added");
 	}
-	
+										     //WQ
 	//================================= Option 3 Loan =================================
 	public static boolean doLoanCamcorder(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
 		
@@ -257,7 +257,7 @@ public class ResourceCentre {
 		}
 		
 	}
-	
+											//WQ
 	//================================= Option 4 Return =================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
